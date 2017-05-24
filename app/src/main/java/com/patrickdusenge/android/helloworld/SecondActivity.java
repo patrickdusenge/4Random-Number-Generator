@@ -1,42 +1,54 @@
 package com.patrickdusenge.android.helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
-import java.util.StringTokenizer;
 
 public class SecondActivity extends Activity {
-
-    public int firstNum;
-    public int lastNum;
-    public int numbers;
     private TextView txt;
-
-    public void getRandom(int firstNum, int lastNum, int numbers){
-        this.firstNum = firstNum;
-        this.lastNum = lastNum;
-        this.numbers = numbers;
-    }
-
-    @Override
+    private Button btn;
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        txt = (TextView) findViewById(R.id.numbers);
+         Bundle bundle = getIntent().getExtras();
 
-        for(int i = 0; i < numbers; i++){
-            Random rnd = new Random();
-            int listNumbers = rnd.nextInt(firstNum) +lastNum;
-            listNumbers = Integer.parseInt(txt.getText().toString());
+         int minNum = bundle.getInt("firstNum");
+         int maxNum = bundle.getInt("lastNum");
+         int numbers = bundle.getInt("numbers");
 
-        }
+         txt = (TextView) findViewById(R.id.numbers);
 
+         int random[] = new int[numbers];
+         for(int i = 0; i < random.length; i++){
+             Random rand = new Random();
+             random[i] = rand.nextInt(minNum) + maxNum;
+         }
 
+         String arrString = random.toString() + ", ";
+
+         txt.setText(arrString);
+
+        btn = (Button) findViewById(R.id.goback);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBackToActivity();
+            }
+        });
     }
 
-
-
+    private void goBackToActivity(){
+        Intent goBack = new Intent(this, MainActivity.class);
+        startActivity(goBack);
+    }
 }
+
+
+

@@ -19,38 +19,40 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        msg = (TextView) findViewById(R.id.message); // Intro message
+        msg = (TextView) findViewById(R.id.textView2); // Intro message
         firstNum = (TextView) findViewById(R.id.fnumber); // firstNum
         lastNum = (TextView) findViewById(R.id.snumber); //lastNum
         numbers = (TextView) findViewById(R.id.numbers); // how many number to generate
         btn = (Button)findViewById(R.id.generate); // generate button
 
-        String message = " Welcome to Random Number Generator."
-                + "Please enter the following to continue ";
+        String message = "Welcome to Random Number Generator."
+                + " Please enter the following to continue ";
 
-        msg.setText(message); // fixed, lol
+        msg.setText(message);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-
-                int firstVar = Integer.parseInt(firstNum.getText().toString());
-                int lastVar = Integer.parseInt(lastNum.getText().toString());
-                int numVar = Integer.parseInt(numbers.getText().toString());
-
-                SecondActivity obj = new SecondActivity();
-                obj.getRandom(firstVar, lastVar, numVar);
-
                 goToSecondActivity();
             }
         });
     }
 
+
     private void goToSecondActivity(){
+        int min = Integer.parseInt(firstNum.getText().toString());
+        int max = Integer.parseInt(lastNum.getText().toString());
+        int num = Integer.parseInt(numbers.getText().toString());
+
         Intent intent = new Intent(this,SecondActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("firstNum", min);
+        bundle.putInt("lastNum", max);
+        bundle.putInt("numbers", num);
+
+                intent.putExtras(bundle);
         startActivity(intent);
+
     }
 
 

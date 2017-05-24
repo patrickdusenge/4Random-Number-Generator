@@ -18,16 +18,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776" />
+        app:layout_constraintVertical_bias="0.931"
+        app:layout_constraintHorizontal_bias="0.498" />
 
     <TextView
         android:id="@+id/numbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="307dp"
+        android:layout_marginTop="375dp"
         android:text="How Many Numbers?"
         android:textColor="#ffffff"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,10 +37,10 @@
         android:id="@+id/snumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="179dp"
+        android:layout_marginTop="225dp"
         android:text="Maximum Number"
         android:textColor="#ffffff"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,8 +54,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="96dp"
-        app:layout_constraintHorizontal_bias="0.497" />
+        android:layout_marginTop="131dp" />
 
     <EditText
         android:id="@+id/editText5"
@@ -65,17 +65,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="354dp"
-        app:layout_constraintHorizontal_bias="0.497" />
+        android:layout_marginTop="417dp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="223dp"
+        android:layout_marginTop="280dp"
         android:ems="2"
         android:inputType="number"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -84,21 +82,26 @@
         android:id="@+id/fnumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="82dp"
         android:text="Minimum Number"
         android:textColor="#ffffff"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.497" />
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-234dp"
-        android:layout_marginTop="-4dp"
-        android:text="Welcome to Random Number Generator. PLease fill in the following to continue"
-        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_marginTop="2dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
