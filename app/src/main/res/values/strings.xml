@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Random Numbers</string>
+    <string name="app_name">4Random</string>
     <string name="title_activity_second">SecondActivity</string>
 </resources>

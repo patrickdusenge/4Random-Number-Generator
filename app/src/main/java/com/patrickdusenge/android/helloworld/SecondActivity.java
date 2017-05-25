@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class SecondActivity extends Activity {
@@ -23,17 +24,18 @@ public class SecondActivity extends Activity {
          int maxNum = bundle.getInt("lastNum");
          int numbers = bundle.getInt("numbers");
 
-         txt = (TextView) findViewById(R.id.numbers);
+         txt = (TextView) findViewById(R.id.showNumbers);
 
          int random[] = new int[numbers];
+         int range = Math.abs (maxNum - minNum);
          for(int i = 0; i < random.length; i++){
              Random rand = new Random();
-             random[i] = rand.nextInt(minNum) + maxNum;
+             //random[i] = rand.nextInt(minNum) + maxNum;
+             random[i] = rand.nextInt(range) + minNum;
          }
 
-         String arrString = random.toString() + ", ";
+         txt.setText(Arrays.toString(random));
 
-         txt.setText(arrString);
 
         btn = (Button) findViewById(R.id.goback);
         btn.setOnClickListener(new View.OnClickListener() {

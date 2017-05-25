@@ -5,14 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.lang.String;
 public class MainActivity extends AppCompatActivity {
 
     private TextView msg;
-    private TextView firstNum;
-    private TextView lastNum;
-    private TextView numbers;
+    private EditText minNum;
+    private EditText maxNum;
+    private EditText numbers;
     private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         msg = (TextView) findViewById(R.id.textView2); // Intro message
-        firstNum = (TextView) findViewById(R.id.fnumber); // firstNum
-        lastNum = (TextView) findViewById(R.id.snumber); //lastNum
-        numbers = (TextView) findViewById(R.id.numbers); // how many number to generate
+        minNum = (EditText) findViewById(R.id.min_number); // firstNum
+        maxNum = (EditText) findViewById(R.id.max_number); //lastNum
+        numbers = (EditText) findViewById(R.id.num_numbers); // how many number to generate
         btn = (Button)findViewById(R.id.generate); // generate button
 
         String message = "Welcome to Random Number Generator."
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void goToSecondActivity(){
-        int min = Integer.parseInt(firstNum.getText().toString());
-        int max = Integer.parseInt(lastNum.getText().toString());
+        int min = Integer.parseInt(minNum.getText().toString());
+        int max = Integer.parseInt(maxNum.getText().toString());
         int num = Integer.parseInt(numbers.getText().toString());
 
         Intent intent = new Intent(this,SecondActivity.class);
